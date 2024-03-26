@@ -1,0 +1,28 @@
+<h1>Danh sách người dùng</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th>Tên</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach((user, index) => { %>
+      <tr>
+        <td scope="row"><%= user?.id %></td>
+        <td><%= user?.name %></td>
+        <td><%= user?.username %></td>
+        <td><%= user?.email %></td>
+        <td>
+          <a href="/users/<%= index+1 %>" class="btn btn-warning">Chi tiết</a>
+        </td>
+      </tr>
+    <% }) %>
+  <!--  -->
+  </tbody>
+</table>
+

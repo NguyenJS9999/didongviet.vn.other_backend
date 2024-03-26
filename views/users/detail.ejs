@@ -1,0 +1,23 @@
+
+
+<h1>Danh sách người dùng</h1>
+<a href="/users" class="btn btn-success">Quay lại</a>
+
+<table class="table table-bordered mt-3">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th>Tên</th>
+      <th>Username</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+		<td scope="row"><%= userDetail?.id %></td>
+		<td><%= userDetail?.name %></td>
+		<td><%= userDetail?.username %></td>
+		<td><%= userDetail?.email %></td>
+  <!--  -->
+  </tbody>
+</table>
+
