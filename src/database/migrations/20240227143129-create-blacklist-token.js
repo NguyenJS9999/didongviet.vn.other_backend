@@ -15,7 +15,7 @@ module.exports = {
       expired: {
         type: Sequelize.DATE,
       },
-      created_at: {
+      updated_at: {
         type: Sequelize.DATE,
       },
       updated_at: {

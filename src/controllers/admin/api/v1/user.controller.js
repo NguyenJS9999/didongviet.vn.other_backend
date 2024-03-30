@@ -1,12 +1,15 @@
-console.log('user.controller');
+console.log('controller -> admin -> api -> v1 -> user.controller');
 
 const { Op } = require("sequelize");
 const { object, string } = require("yup");
 const bcrypt = require("bcrypt");
-const { User } = require("../../../../models");
+const { Users } = require("../../../../models/index");
+console.log('In ra bảng Users: ', Users);
+
 
 module.exports = {
   index: async (req, res) => {
+    console.log('Chạy vào get list Users: ');
     const {
       order = "asc",
       sort = "id",
@@ -41,7 +44,7 @@ module.exports = {
         options.limit = limit;
         options.offset = offset;
       }
-      const { count, rows: users } = await User.findAndCountAll(options);
+      const { count, rows: users } = await Users.findAndCountAll(options);
       Object.assign(response, {
         status: 200,
         message: "Success",
@@ -205,6 +208,7 @@ module.exports = {
     }
     res.status(response.status).json(response);
   },
+
   index2: async (req, res) => {
     const response = {};
 
@@ -221,7 +225,6 @@ module.exports = {
       Object.assign(response, { status: 500, message: "Máy chủ lỗi" });
     }
     res.status(response.status).json(response);
-
   },
 
 };

@@ -1,9 +1,9 @@
-console.log('user router');
-var express = require("express")
-var router = express.Router()
-const userController = require("../controllers/admin/api/v1/user.controller")
+// console.log('user router');
+// var express = require("express")
+// var router = express.Router()
+// const userController = require("../controllers/admin/api/v1/user.controller")
 /* GET users listing. */
-router.get("/", userController.index)
+// router.get("/", userController.index)
 // router.get("/list", userController.index2)
 
 // router.get("/add", userController.add)
@@ -16,4 +16,4 @@ router.get("/", userController.index)
 
 // router.get("/permission/:id", userController.permission)
 // router.post("/permission/:id", userController.handlePermission)
-module.exports = router
+// module.exports = router

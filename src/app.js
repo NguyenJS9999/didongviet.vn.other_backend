@@ -3,19 +3,21 @@ const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 var logger = require("morgan");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser") // !
 const session = require("express-session");
 const passport = require("passport");
 const cors = require("cors");
 
 //
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-const authRouter = require("./routes/auth");
+// const indexRouter = require("./routes/index");
+// const usersRouter = require("./routes/users");
+// const authRouter = require("./routes/auth");
+const apiRouter = require("./routes/api");
+
 const { User } = require("./models/index");
-const passportLocal = require("./passports/passport.local");
-const guestMiddleware = require("./middlewares/admin/auth.middleware");
+// const passportLocal = require("./passports/passport.local");
+// const guestMiddleware = require("./middlewares/admin/auth.middleware");
 
 //
 const app = express();
@@ -74,9 +76,12 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/auth", guestMiddleware, authRouter);
+// app.use("/api", cors(corsOptions), apiRouter);
+app.use("/api", apiRouter);
+
+// app.use("/auth", guestMiddleware, authRouter);
 // app.use("/", indexRouter);
-app.use("/users", usersRouter)
+// app.use("/users", usersRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

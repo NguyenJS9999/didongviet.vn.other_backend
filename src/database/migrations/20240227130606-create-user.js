@@ -84,14 +84,14 @@ module.exports = {
         allowNull: true, //Not null
       },
 
-      createdAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE()
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE()
-      }
+      },
     });
   },
 

@@ -30,8 +30,8 @@ module.exports = {
         is_active: true,
         reset_token: "abcd",
         // reset_token_expires_at: "2025/03/26",
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: new Date(),
       },
       {
         name: "Client init",
@@ -50,9 +50,8 @@ module.exports = {
         is_active: true,
         reset_token: "abcd",
         // reset_token_expires_at: "2025/03/26",
-
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: new Date(),
       },
     ];
 

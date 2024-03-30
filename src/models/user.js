@@ -42,8 +42,8 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Users',
     tableName: "Users", //Tên bảng trong Database
-    createdAt: "createdAt",
-    updatedAt: "updatedAt",
+    createdAt: "created_at",
+    updatedAt: "updated_at",
   });
   return Users;
 };
