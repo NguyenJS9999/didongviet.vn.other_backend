@@ -10,38 +10,51 @@ module.exports = {
 	      type: Sequelize.INTEGER
 	    },
 	    name: {
-				type: Sequelize.STRING(100),
+				type: Sequelize.STRING(255),
         allowNull: false, //Not null
 	    },
 			description: {
-				type: Sequelize.STRING(100),
-        allowNull: false, //Not null
+				type: Sequelize.STRING(255),
+        allowNull: true,
 	    },
 			price: {
-				type: Sequelize.STRING(100),
+				type: Sequelize.STRING(255),
         allowNull: false, //Not null
 	    },
 			quantity: {
-				type: Sequelize.STRING(100),
-        allowNull: false, //Not null
-	    },
-			category_id: {
-				type: Sequelize.STRING(100),
+				type: Sequelize.STRING(255),
         allowNull: false, //Not null
 	    },
 			image_url: {
-				type: Sequelize.STRING(100),
-        allowNull: false, //Not null
+				type: Sequelize.STRING(255),
+        allowNull: true, //Not null
 	    },
-			color: {
-				type: Sequelize.STRING(100),
-        allowNull: false, //Not null
+			category_id: {
+				type: Sequelize.INTEGER,
+        allowNull: true,
 	    },
-	    updated_at: {
+			code: {
+				type: Sequelize.STRING(255),
+        allowNull: true,
+	    },
+			sluge: {
+				type: Sequelize.STRING(255),
+        allowNull: true,
+	    },
+			sort_typee: {
+				type: Sequelize.STRING(255),
+        allowNull: true,
+	    },
+
+	    createdAt: {
 	      allowNull: false,
 	      type: Sequelize.DATE
 	    },
-	    updated_at: {
+	    updatedAt: {
+	      allowNull: false,
+	      type: Sequelize.DATE
+	    },
+			deletedAt: {
 	      allowNull: false,
 	      type: Sequelize.DATE
 	    }

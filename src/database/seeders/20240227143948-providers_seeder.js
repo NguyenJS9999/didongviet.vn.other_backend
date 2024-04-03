@@ -6,8 +6,9 @@ module.exports = {
     await queryInterface.bulkInsert("Providers", [
       {
         name: "email",
-        created_at: new Date(),
-        updated_at: new Date(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
+			  deletedAt: new Date(),
       },
     ]);
   },

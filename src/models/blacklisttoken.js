@@ -29,8 +29,8 @@ module.exports = (sequelize, DataTypes) => {
       sequelize,
       modelName: "Blacklist_tokens",
       tableName: "Blacklist_tokens",
-      createdAt: "created_at",
-      updatedAt: "updated_at",
+      createdAt: "createdAt",
+      updatedAt: "updatedAt",
     },
   );
   return Blacklist_tokens;

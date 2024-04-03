@@ -23,6 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING(255),
     avata: DataTypes.STRING(255),
     infors: DataTypes.STRING(100),
+    total_buy: DataTypes.INTEGER,
+    join_on: DataTypes.DATE,
     // Phân loại cách thức đăng nhập
     oauth_provider_id: DataTypes.INTEGER,
     role: DataTypes.STRING(50),
@@ -40,10 +42,10 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'Users',
     tableName: "Users", //Tên bảng trong Database
-    createdAt: "created_at",
-    updatedAt: "updated_at",
+    modelName: 'Users',
+    createdAt: "createdAt",
+    updatedAt: "updatedAt",
   });
   return Users;
 };

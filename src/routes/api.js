@@ -8,13 +8,13 @@ const authMiddleware = require("../middlewares/admin/auth.middleware");
 
 //Users
 // router.get("/v1/users", authMiddleware, userController.index);
-router.get("/v1/users", userController.index);
-router.get("/v1/users2", userController.index2);
+router.get("/v1/users", userController.index); // Create all
+router.get("/v1/users/:id", userController.find); // Get one
+router.post("/v1/users", userController.store); // Create one
+router.put("/v1/users/:id", userController.update);  // Update one
+router.patch("/v1/users/:id", userController.update);
+router.delete("/v1/users/:id", userController.delete);
 
-// router.post("/v1/users", userController.store);
-// router.get("/v1/users/:id", userController.find);
-// router.put("/v1/users/:id", userController.update);
-// router.patch("/v1/users/:id", userController.update);
 
 //Authentication
 router.post("/v1/auth/login", authController.login);

@@ -33,8 +33,8 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'User_refresh_token',
     tableName: "User_refresh_token", //Tên bảng trong Database
-    createdAt: "created_at",
-    updatedAt: "updated_at",
+    createdAt: "createdAt",
+    updatedAt: "updatedAt",
   });
   return User_refresh_token;
 };

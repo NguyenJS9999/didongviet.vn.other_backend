@@ -15,12 +15,16 @@ module.exports = {
       expired: {
         type: Sequelize.DATE,
       },
-      updated_at: {
+      createdAt: {
         type: Sequelize.DATE,
       },
-      updated_at: {
+      updatedAt: {
         type: Sequelize.DATE,
       },
+      deletedAt: {
+	      allowNull: false,
+	      type: Sequelize.DATE
+	    }
     });
   },
   async down(queryInterface, Sequelize) {
