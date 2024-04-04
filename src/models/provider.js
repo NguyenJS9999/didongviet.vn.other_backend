@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       tableName: "Providers",
       createdAt: "createdAt",
       updatedAt: "updatedAt",
+      deletedAt: "deletedAt"
     },
   );
   return Provider;

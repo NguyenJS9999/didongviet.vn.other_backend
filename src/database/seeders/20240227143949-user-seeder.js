@@ -52,7 +52,7 @@ module.exports = {
 		];
 
 		let y = 1;
-		for (let i = 0; i < 250; i++) {
+		for (let i = 0; i < 150; i++) {
 			// const salt = bcrypt.genSaltSync(10);
 			users.push({
 				name: `Client init ${y}`,

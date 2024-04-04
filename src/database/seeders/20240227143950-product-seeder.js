@@ -1,5 +1,4 @@
 'use strict';
-const bcrypt = require('bcrypt');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
 	async up(queryInterface, Sequelize) {
@@ -12,17 +11,17 @@ module.exports = {
 		 *   isBetaMember: false
 		 * }], {});
 		 */
-		const product = [
+		const products = [
 			{
-				name: `product name 01`,
-				description: `description 01`,
-				price: `price`,
-				quantity: `quantity`,
-				image: `image`,
-				category_id: `category_id`,
+				name: `product name 0`,
+				description: `description 0`,
+				price: 10500,
+				quantity: 2800,
+				image_url: `https://maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/assets/img/user/user.png`,
+				category_id: 1,
 				code: `product-code01`,
 				slug: `/product-slug`,
-				sort_type: `asc`,
+				sort_type: `esc`,
 			  createdAt: new Date(),
 			  updatedAt: new Date(),
 			  deletedAt: new Date(),
@@ -32,24 +31,25 @@ module.exports = {
 
 		let y = 1;
 		for (let i = 0; i < 150; i++) {
-			users.push({
-				name: `product name  ${y}`,
-				description: `description  ${y}`,
+			products.push({
+				name: `products name ${y}`,
+				description: `description ${y}`,
 				price: (1000+y)*y,
 				quantity: (y*2)+y,
-				image: `https://maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/assets/img/user/user.png`,
+				image_url: `https://maraviyainfotech.com/projects/ekka/ekka-v37/ekka-admin/assets/img/user/user.png`,
 				category_id: y,
 				code: `code ${y}${y}`,
 				slug: `/product-slug`,
 				sort_type: `asc`,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
+				deletedAt: new Date(),
 			});
 		  y ++
 
 		}
 
-		await queryInterface.bulkInsert('Product', product, {});
+		await queryInterface.bulkInsert('Products', products, {});
 	},
 
 	async down(queryInterface, Sequelize) {
@@ -59,6 +59,6 @@ module.exports = {
 		 * Example:
 		 * await queryInterface.bulkDelete('People', null, {});
 		 */
-		await queryInterface.bulkDelete('Product', null, {});
+		await queryInterface.bulkDelete('Products', null, {});
 	}
 };

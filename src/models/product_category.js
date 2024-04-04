@@ -1,8 +1,9 @@
 'use strict';
-
-const { Model } = require("sequelize");
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class User_refresh_token extends Model {
+  class Product_category extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -10,32 +11,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User_refresh_token.belongsToMany(models.Users, {
-        foreignKey: "user_id",
-        through: "id",
-        // as: "users",
-      });
     }
   }
-  User_refresh_token.init({
+  Product_category.init({
     id: {
       type: DataTypes.INTEGER, //Kiểu dữ liệu
       primaryKey: true,
       autoIncrement: true,
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER, //Kiểu dữ liệu
-    // },
-    user_id: DataTypes.INTEGER,
-    refresh_token: DataTypes.STRING(255),
-
+    name: DataTypes.STRING(255),
+    parent_id: DataTypes.INTEGER,
   }, {
     sequelize,
-    modelName: 'User_refresh_token',
-    tableName: "User_refresh_token", //Tên bảng trong Database
+    modelName: 'Product_category',
+    tableName: "Product_category",
     createdAt: "createdAt",
     updatedAt: "updatedAt",
     deletedAt: "deletedAt"
   });
-  return User_refresh_token;
+  return Product_category;
 };

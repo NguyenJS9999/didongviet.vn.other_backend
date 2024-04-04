@@ -31,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       tableName: "Blacklist_tokens",
       createdAt: "createdAt",
       updatedAt: "updatedAt",
+      deletedAt: "deletedAt"
     },
   );
   return Blacklist_tokens;

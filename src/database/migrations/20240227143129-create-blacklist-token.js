@@ -17,14 +17,17 @@ module.exports = {
       },
       createdAt: {
         type: Sequelize.DATE,
+        allowNull: false,
       },
       updatedAt: {
         type: Sequelize.DATE,
+        allowNull: false,
       },
       deletedAt: {
-	      allowNull: false,
-	      type: Sequelize.DATE
-	    }
+        type: Sequelize.DATE(),
+        allowNull: true
+      },
+
     });
   },
   async down(queryInterface, Sequelize) {

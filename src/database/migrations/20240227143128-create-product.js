@@ -37,27 +37,27 @@ module.exports = {
 				type: Sequelize.STRING(255),
         allowNull: true,
 	    },
-			sluge: {
+			slug: {
 				type: Sequelize.STRING(255),
         allowNull: true,
 	    },
-			sort_typee: {
+			sort_type: {
 				type: Sequelize.STRING(255),
         allowNull: true,
 	    },
 
-	    createdAt: {
-	      allowNull: false,
-	      type: Sequelize.DATE
-	    },
-	    updatedAt: {
-	      allowNull: false,
-	      type: Sequelize.DATE
-	    },
-			deletedAt: {
-	      allowNull: false,
-	      type: Sequelize.DATE
-	    }
+			createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      deletedAt: {
+        type: Sequelize.DATE(),
+        allowNull: true
+      },
 	  });
 	},
 	async down(queryInterface, Sequelize) {

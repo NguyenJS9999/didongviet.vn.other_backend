@@ -39,13 +39,13 @@ module.exports = (sequelize, DataTypes) => {
     // Chức năng quên mk
     reset_token: DataTypes. STRING(100),
     reset_token_expires_at: DataTypes.DATE,
-
   }, {
     sequelize,
     tableName: "Users", //Tên bảng trong Database
     modelName: 'Users',
     createdAt: "createdAt",
     updatedAt: "updatedAt",
+    deletedAt: "deletedAt"
   });
   return Users;
 };

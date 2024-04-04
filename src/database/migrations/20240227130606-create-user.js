@@ -102,16 +102,16 @@ module.exports = {
       },
 
       createdAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE()
       },
       updatedAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE()
       },
       deletedAt: {
-        allowNull: false,
-        type: Sequelize.DATE()
+        type: Sequelize.DATE(),
+        allowNull: true
       },
     });
   },

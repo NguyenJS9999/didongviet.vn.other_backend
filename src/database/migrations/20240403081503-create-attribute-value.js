@@ -1,28 +1,26 @@
 'use strict';
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
-    await queryInterface.createTable('User_refresh_token', {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('Attribute_values', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
+        unique: true, // ! Duy nhất
       },
-      user_id: {
+      product_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
-
-      refresh_token: {
+      attribute_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+      },
+      value: {
         type: Sequelize.STRING(255),
+        defaultValue: 'Name',
         allowNull: true,
       },
 
@@ -38,18 +36,10 @@ module.exports = {
         type: Sequelize.DATE(),
         allowNull: true
       },
-
-    })
+      
+    });
   },
-
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
-    await queryInterface.dropTable("User_refresh_token");
-
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('Attribute_values');
   }
 };
